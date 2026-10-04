@@ -56,6 +56,8 @@ main>p{color:var(--muted);line-height:1.6}
 .field-group label,main label{font-size:.87rem;font-weight:700;color:#354c40}
 .field-group input,.field-group textarea,.field-group select,.form-row input,main>input,main>form input,main>form select,main>form textarea,main select{width:100%;min-width:0;padding:11px 13px;border:1px solid #dce5db;border-radius:10px;background:#fcfdfb;font:inherit;color:var(--ink)}
 .field-group textarea{resize:vertical}
+.field-group.checkbox-field label{display:flex;align-items:center;gap:10px;cursor:pointer}
+.field-group.checkbox-field input[type="checkbox"]{width:18px;min-width:18px;min-height:18px;height:18px;margin:0;padding:0;accent-color:var(--green)}
 .field-group input:focus,.field-group textarea:focus,.field-group select:focus,.form-row input:focus,main input:focus,main select:focus,main textarea:focus{outline:3px solid rgba(40,123,88,.14);border-color:var(--green)}
 .form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
 .image-previews{display:flex;gap:10px;flex-wrap:wrap;min-height:50px;margin-top:8px}

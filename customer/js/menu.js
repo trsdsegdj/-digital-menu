@@ -404,10 +404,18 @@ function renderMenu(){
 		const matchesSearch = !searchTerm || text.includes(searchTerm);
 		const matchesQuick = quickFilter === 'all'
 			|| (quickFilter === 'deals' && Number(item.discount || 0) > 0)
-			|| (quickFilter === 'popular' && (item.popular || item.featured || item.isPopular))
-			|| (quickFilter === 'new' && (item.isNew || item.new || item.newItem));
+			|| (quickFilter === 'popular' && (typeof item.popular === 'boolean' ? item.popular : item.featured || item.isPopular))
+			|| (quickFilter === 'new' && (item.updatedAt != null || item.isNew || item.new || item.newItem));
 		return matchesSearch && matchesQuick;
 	});
+	if(quickFilter === 'new'){
+		items.sort((left,right)=>{
+			const updatedAt = item=>typeof item.updatedAt?.toMillis === 'function'
+				? item.updatedAt.toMillis()
+				: Number(item.updatedAt) || 0;
+			return updatedAt(right)-updatedAt(left);
+		});
+	}
 	if(menuItemCount) menuItemCount.textContent = `${items.length} ${items.length === 1 ? translations[lang].itemCountOne : translations[lang].itemCountMany}`;
 	if(!items.length){
 		m.textContent = '';

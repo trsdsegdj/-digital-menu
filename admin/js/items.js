@@ -23,6 +23,7 @@ const descriptionInput = document.getElementById('item-description');
 const catInput = document.getElementById('item-category');
 const priceInput = document.getElementById('item-price');
 const discountInput = document.getElementById('item-discount');
+const popularInput = document.getElementById('item-popular');
 const imageInput = document.getElementById('item-images');
 const previews = document.getElementById('image-previews');
 const list = document.getElementById('items-list');
@@ -267,7 +268,9 @@ async function renderItems(){
 		description: descriptionInput ? descriptionInput.value.trim() : '',
 		category: catInput && catInput.value ? catInput.value.trim() : 'Uncategorized',
 		price: Number(priceInput.value) || 0,
-		discount: Number(discountInput ? discountInput.value : 0) || 0
+		discount: Number(discountInput ? discountInput.value : 0) || 0,
+		popular: Boolean(popularInput?.checked),
+		updatedAt: Date.now()
 	};
 	if (!payload.name) return alert('Please enter a product title.');
 	if (!Number.isFinite(payload.price) || payload.price < 0) {
@@ -345,6 +348,9 @@ list.addEventListener('click', async (ev)=>{
 			catInput.value = data.category || '';
 			priceInput.value = data.price || 0;
 			discountInput.value = data.discount || 0;
+			if(popularInput) popularInput.checked = typeof data.popular === 'boolean'
+				? data.popular
+				: Boolean(data.featured || data.isPopular);
 			showExistingImages(data.images || []);
 		}
 	}
