@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Manager Panel</title>
+  <link rel="stylesheet" href="css/admin.css?v=8">
+</head>
+<body>
+  <aside>
+    <h2>Manager Panel</h2>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="categories.html">Categories</a>
+      <a href="items.html">Catalog Items</a>
+      <a href="tables.html">Tables</a>
+      <a href="whatsapp.html">WhatsApp</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="page-header">
+      <div>
+        <p class="eyebrow">Access</p>
+        <h1>Admin Login</h1>
+      </div>
+    </div>
+
+    <div class="panel auth-panel">
+      <p>Sign in with your admin email and password.</p>
+      <div class="auth-form">
+        <div class="field-group">
+          <label>Email</label>
+          <input id="admin-email" type="email" placeholder="admin@example.com">
+        </div>
+        <div class="field-group">
+          <label>Password</label>
+          <input id="admin-password" type="password" placeholder="••••••••">
+        </div>
+        <div class="form-actions">
+          <button id="login-btn" class="primary-btn" type="button">Login</button>
+          <button id="signout" type="button" class="secondary-btn" style="display:none;">Sign out</button>
+        </div>
+      </div>
+      <p id="auth-msg"></p>
+    </div>
+  </main>
+
+  <script type="module" src="js/auth.js?v=11"></script>
+  <script>
+    const adminPath = window.location.pathname.toLowerCase();
+    if (adminPath.endsWith('/admin/') || adminPath.endsWith('/admin') || adminPath.endsWith('/admin/index.html')) {
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>

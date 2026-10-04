@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<base href="customer/">
+	<title>Your Business | Cart</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+	<script>if(localStorage.getItem('siteTheme')==='theme-dark')document.documentElement.classList.add('theme-dark');</script>
+	<link rel="stylesheet" href="css/customer.css?v=16">
+</head>
+<body class="cart-page">
+	<header class="cart-header">
+		<div class="cart-header-top">
+			<a class="customer-brand" href="index.html" aria-label="Back to catalog">
+				<span class="customer-brand-mark">BL</span>
+				<span data-restaurant-name>Your Business</span>
+			</a>
+			<a class="cart-back-link" href="index.html"><span aria-hidden="true">&#8592;</span>Back</a>
+		</div>
+		<div class="cart-page-heading">
+			<p class="eyebrow">YOUR ORDER</p>
+			<h1 id="cart-title">Your Cart</h1>
+			<p class="cart-page-subtitle">Review your items before checkout.</p>
+		</div>
+	</header>
+	<main class="cart-main">
+		<section class="cart-shell" aria-label="Your cart">
+			<div class="cart-section-heading">
+				<h2>Order items</h2>
+				<span id="cart-items-count" aria-live="polite"></span>
+			</div>
+			<div id="cart" aria-live="polite"></div>
+			<div class="table-number-field">
+				<label id="location-number-label" for="table-number">Table number <span aria-hidden="true">*</span></label>
+				<input id="table-number" name="tableNumber" type="number" min="1" max="20" step="1" inputmode="numeric" autocomplete="off" placeholder="Enter your table number" required aria-required="true">
+			</div>
+			<button id="checkout" type="button">Place Order</button>
+		</section>
+	</main>
+
+	<script type="module" src="js/cart.js?v=14"></script>
+</body>
+</html>

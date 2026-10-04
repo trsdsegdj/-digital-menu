@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Image unavailable">
+  <rect width="480" height="360" fill="#edf2ef"/>
+  <circle cx="240" cy="170" r="84" fill="#d7e2dc"/>
+  <path d="M184 174h112l-12 52h-88z" fill="#8ba99a"/>
+  <path d="M204 163c0-20 16-36 36-36s36 16 36 36" fill="none" stroke="#8ba99a" stroke-width="12" stroke-linecap="round"/>
+  <text x="240" y="285" fill="#567263" font-family="Arial,sans-serif" font-size="20" text-anchor="middle">No image available</text>
+</svg>

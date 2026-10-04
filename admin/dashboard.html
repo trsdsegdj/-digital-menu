@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/admin.css?v=9">
+</head>
+<body>
+  <aside>
+    <h2>Business Admin</h2>
+    <nav>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="categories.html">Categories</a>
+      <a href="items.html">Catalog Items</a>
+      <a href="tables.html">Tables</a>
+      <a href="whatsapp.html">WhatsApp</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="page-header">
+      <div>
+        <p class="eyebrow">BUSINESS OVERVIEW</p>
+        <h1>Dashboard</h1>
+      </div>
+    </div>
+
+    <section class="dashboard-metrics" aria-label="Catalog summary">
+      <article class="dashboard-metric">
+        <span class="metric-label">Total Categories</span>
+        <strong id="categories">—</strong>
+      </article>
+      <article class="dashboard-metric">
+        <span class="metric-label">Total Items</span>
+        <strong id="items">—</strong>
+      </article>
+      <article class="dashboard-metric">
+        <span id="locations-label" class="metric-label">Total Tables</span>
+        <strong id="tables">—</strong>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="js/auth.js?v=11"></script>
+  <script type="module" src="js/dashboard.js?v=5"></script>
+</body>
+</html>

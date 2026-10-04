@@ -1,0 +1,1 @@
+export { firebaseConfig } from '../../shared/firebase-config.js';

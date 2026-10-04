@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tables</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/admin.css?v=10">
+</head>
+<body>
+  <main>
+    <div class="page-header">
+      <div>
+        <p class="eyebrow">Checkout setup</p>
+        <h1>Tables</h1>
+        <p>Choose whether checkout asks for a table or room number, and set the available quantity.</p>
+      </div>
+    </div>
+    <section class="panel table-settings-panel">
+      <form id="table-settings-form" class="admin-form">
+        <div class="field-group">
+          <label for="location-type">Checkout location type</label>
+          <select id="location-type" required>
+            <option value="table">Table</option>
+            <option value="room">Room</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="location-count">Total number of tables / rooms</label>
+          <input id="location-count" type="number" min="1" max="20" step="1" value="1" required>
+          <small>Enter a whole number from 1 to 20. Customers can enter numbers from 1 up to this amount.</small>
+        </div>
+        <p id="table-settings-status" class="form-status" role="status" aria-live="polite"></p>
+        <div class="form-actions">
+          <button id="save-table-settings" class="primary-btn" type="submit">Save</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script type="module" src="js/auth.js?v=11"></script>
+  <script type="module" src="js/tables.js?v=2"></script>
+</body>
+</html>

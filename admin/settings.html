@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Business Settings</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+		<link rel="stylesheet" href="css/admin.css?v=8">
+	</head>
+	<body>
+		<main>
+			<div class="page-header settings-page-header">
+				<div>
+					<p class="eyebrow">BRAND & APPEARANCE</p>
+					<h1>Business Settings</h1>
+					<p class="settings-intro">Update your business identity and customer page colors.</p>
+				</div>
+			</div>
+			<form id="settings-form" class="settings-form">
+				<section class="settings-section" aria-labelledby="settings-identity-title">
+					<div class="settings-section-heading">
+						<div><h2 id="settings-identity-title">Business identity</h2><p>These details appear on your customer page.</p></div>
+					</div>
+					<div class="settings-field-grid">
+						<div class="field-group">
+							<label for="restaurant-name">Business name</label>
+							<input id="restaurant-name" placeholder="Your Business Name" autocomplete="organization">
+						</div>
+						<div class="field-group">
+							<label for="restaurant-logo-file">Business logo</label>
+							<input id="restaurant-logo-file" type="file" accept="image/*">
+							<div class="logo-preview-box"><img id="logo-preview" alt="Business logo preview"></div>
+						</div>
+					</div>
+				</section>
+				<section class="settings-section" aria-labelledby="settings-palette-title">
+					<div class="settings-section-heading">
+						<div><h2 id="settings-palette-title">Customer page palette</h2><p>Color changes preview immediately and apply to the open customer page.</p></div>
+					</div>
+					<div class="settings-color-grid">
+						<div class="field-group settings-color-card">
+							<label for="topbar-color">Header color</label>
+							<div class="color-setting-row">
+								<input id="topbar-color" type="color" value="#0a7660" aria-label="Choose customer page header color">
+								<input id="topbar-color-value" type="text" value="#0a7660" maxlength="7" pattern="#[0-9a-fA-F]{6}" aria-label="Header hex color" spellcheck="false">
+							</div>
+							<small>Customer page header and brand bar.</small>
+						</div>
+						<div class="field-group settings-color-card">
+							<label for="button-color">Action button color</label>
+							<div class="color-setting-row">
+								<input id="button-color" type="color" value="#087f68" aria-label="Choose customer page action button color">
+								<input id="button-color-value" type="text" value="#087f68" maxlength="7" pattern="#[0-9a-fA-F]{6}" aria-label="Action button hex color" spellcheck="false">
+							</div>
+							<small>Add to cart and order actions.</small>
+						</div>
+					</div>
+					<div class="customer-menu-preview" aria-label="Customer page color preview">
+						<div id="settings-preview-header" class="customer-preview-header"><strong id="settings-preview-name">Your Business</strong><span>Catalog</span></div>
+						<div class="customer-preview-content"><span>Customer page preview</span><button id="settings-preview-button" type="button">+ Add item</button></div>
+					</div>
+				</section>
+				<div class="settings-form-footer">
+					<p id="settings-msg" role="status" aria-live="polite"></p>
+					<button class="primary-btn" type="submit">Save Settings</button>
+				</div>
+			</form>
+		</main>
+		<script type="module" src="js/auth.js?v=11"></script>
+		<script type="module" src="js/settings.js?v=12"></script>
+	</body>
+</html>

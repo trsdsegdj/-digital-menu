@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Catalog Template</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <button class="icon-btn menu" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="brand">Your Business</div>
+
+      <div class="top-actions">
+        <button class="icon-btn search" aria-label="Search"></button>
+        <button class="cart-btn" aria-label="Cart">
+          <span class="cart-icon">🛒</span>
+          <b>3</b>
+        </button>
+      </div>
+
+      <nav class="quick-nav">
+        <button class="quick active"> <span>Home</span></button>
+        <button class="quick">Popular</button>
+        <button class="quick">New</button>
+        <button class="quick plain">Offers</button>
+      </nav>
+    </header>
+
+    <section class="hero-space" aria-hidden="true"></section>
+
+    <section class="categories">
+      <button class="cat active">All Items</button>
+      <button class="cat">Packages</button>
+      <button class="cat">Services</button>
+      <button class="cat">Snacks</button>
+    </section>
+
+    <section class="menu-list">
+      <article class="food-card">
+        <img src="assets/food1.jpg" alt="Example product">
+        <div class="food-info">
+          <h2>Example Item One</h2>
+          <p>A short description of this item or service.</p>
+          <strong>₹29.90</strong>
+        </div>
+      </article>
+
+      <article class="food-card">
+        <img src="assets/food2.jpg" alt="Example product">
+        <div class="food-info">
+          <h2>Example Item Two</h2>
+          <p>Details to help customers choose this option.</p>
+          <strong>₹29.90</strong>
+          <button class="buy">Add to order</button>
+        </div>
+      </article>
+
+      <article class="food-card">
+        <img src="assets/food3.jpg" alt="Example product">
+        <div class="food-info">
+          <h2>Example Item Three</h2>
+          <p>A short description with useful details.</p>
+          <strong>₹29.90</strong>
+        </div>
+        <button class="chat" aria-label="Chat">•••</button>
+      </article>
+    </section>
+
+    <nav class="bottom-nav">
+      <button class="bottom active"><span>⌂</span><small>Home</small></button>
+      <button class="bottom"><span>◈</span><small>Experts</small></button>
+      <button class="bottom center"><span>🛒</span><small>Categories</small></button>
+      <button class="bottom"><span>▤</span><small>Ordered</small></button>
+      <button class="bottom"><span>♙</span><small>Menu</small></button>
+    </nav>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

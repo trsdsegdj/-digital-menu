@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Accounts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/admin.css?v=8">
+</head>
+<body>
+  <main>
+    <div class="page-header">
+      <div>
+        <p class="eyebrow">Access & security</p>
+        <h1>Admin Accounts</h1>
+        <p>Only the primary admin can manage accounts. Passwords are never displayed.</p>
+      </div>
+    </div>
+
+    <p id="admins-status" class="form-status" role="status" aria-live="polite">Loading admin accounts...</p>
+    <section id="admins-content" hidden>
+      <section class="panel admin-account-create">
+        <h2>Register an admin</h2>
+        <form id="admin-create-form" class="admin-form">
+          <div class="field-group">
+            <label for="new-admin-email">Email</label>
+            <input id="new-admin-email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field-group">
+            <label for="new-admin-password">Temporary password</label>
+            <input id="new-admin-password" type="password" minlength="8" maxlength="128" autocomplete="new-password" required>
+            <small>Use at least 8 characters. The new admin can change it by asking the primary admin.</small>
+          </div>
+          <div class="form-actions">
+            <button class="primary-btn" type="submit">Add Admin</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel admin-account-list-panel">
+        <div class="admin-account-list-heading">
+          <h2>Registered admins</h2>
+          <span id="admin-account-count" class="admin-account-count">0</span>
+        </div>
+        <div id="admin-account-list" class="admin-account-list"></div>
+      </section>
+    </section>
+  </main>
+  <script type="module" src="js/auth.js?v=11"></script>
+  <script type="module" src="js/admins.js?v=1"></script>
+</body>
+</html>

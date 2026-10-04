@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="customer/">
+  <title>Your Business | Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://firestore.googleapis.com">
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="css/customer.css?v=43">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand-wrap" href="index.html" aria-label="Business home">
+        <span id="brand-mark" class="brand-mark">BL</span>
+        <span id="restaurantName" class="brand">Your Business</span>
+      </a>
+
+      <div class="top-actions">
+        <button id="theme-toggle" class="switch-toggle theme-toggle" aria-label="Toggle dark and light mode" aria-pressed="false" type="button">☾</button>
+        <button id="lang-toggle" class="switch-toggle language-toggle" aria-label="Toggle English and Bangla" aria-pressed="false" type="button"><span class="language-option language-en">EN</span><span class="language-divider" aria-hidden="true">|</span><span class="language-option language-bn">বাংলা</span></button>
+        <a class="cart-btn" href="cart.html" aria-label="Cart">
+          <span class="cart-icon">🛒</span>
+          <b id="cart-count">0</b>
+        </a>
+      </div>
+
+      <section id="search-panel" class="search-panel" aria-label="Search menu">
+        <label for="menu-search">Search catalog</label>
+        <input id="menu-search" type="search" placeholder="Search items..." autocomplete="off">
+      </section>
+    </header>
+
+    <nav id="quick-nav" class="quick-nav" aria-label="Quick menu filters">
+      <button class="quick active" data-quick-filter="all" type="button"><span class="quick-icon" aria-hidden="true">⌂</span><span data-quick-label="home">Home</span></button>
+      <button class="quick" data-quick-filter="popular" type="button"><span class="quick-icon" aria-hidden="true">🔥</span><span data-quick-label="popular">Popular</span></button>
+      <button class="quick" data-quick-filter="new" type="button"><span class="quick-icon" aria-hidden="true">✨</span><span data-quick-label="new">New</span></button>
+      <button class="quick plain" data-quick-filter="deals" type="button"><span class="quick-icon" aria-hidden="true">🏷️</span><span data-quick-label="deals">Deals</span></button>
+    </nav>
+
+    <section class="hero-space" aria-hidden="true"></section>
+
+    <section id="categories" class="categories" aria-label="Item categories">
+      <div class="categories-rail">
+        <button id="categories-prev" class="category-scroll-control" type="button" aria-label="Scroll categories left" aria-controls="categories-list" hidden>&#8249;</button>
+        <div id="categories-list" class="categories-list" tabindex="0" aria-label="Item categories"></div>
+        <button id="categories-next" class="category-scroll-control" type="button" aria-label="Scroll categories right" aria-controls="categories-list" hidden>&#8250;</button>
+      </div>
+    </section>
+
+    <div class="menu-section-heading">
+      <h1 id="page-title">Our Menu</h1>
+      <span id="menu-item-count" aria-live="polite"></span>
+    </div>
+
+    <section id="menu" class="menu-list" aria-label="Catalog items"></section>
+
+    <a id="confirm-order" class="confirm-order-btn" href="cart.html" hidden aria-label="Confirm order">
+      <span class="sticky-cart-icon" aria-hidden="true">&#128722;</span>
+      <span id="confirm-order-label">Confirm Order</span>
+      <span class="sticky-cart-summary"><span id="confirm-order-count">0</span> <span id="confirm-order-items">items</span></span>
+      <strong id="confirm-order-total">৳0</strong>
+      <span id="sticky-cart-action" class="sticky-cart-action" aria-hidden="true">Place Order &#8594;</span>
+    </a>
+
+    <div id="whatsapp-fab"></div>
+  </main>
+
+  <script type="module" src="js/menu.js?v=30"></script>
+</body>
+</html>
