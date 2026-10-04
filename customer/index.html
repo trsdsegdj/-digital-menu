@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Business | Catalog</title>
+  <script src="js/branding-bootstrap.js?v=1"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
@@ -34,8 +35,24 @@
         <label for="menu-search">Search catalog</label>
         <input id="menu-search" type="search" placeholder="Search items..." autocomplete="off">
       </section>
-
     </header>
+
+    <script>
+      const initialBranding = window.initialRestaurantBranding;
+      if (initialBranding?.restaurantName) {
+        const name = document.getElementById('restaurantName');
+        const mark = document.getElementById('brand-mark');
+        name.textContent = initialBranding.restaurantName;
+        mark.textContent = initialBranding.restaurantName.trim().slice(0, 2).toUpperCase() || 'RM';
+        if (initialBranding.logoUrl) {
+          const image = document.createElement('img');
+          image.src = initialBranding.logoUrl;
+          image.alt = `${initialBranding.restaurantName} logo`;
+          mark.replaceChildren(image);
+          mark.classList.add('has-logo');
+        }
+      }
+    </script>
 
     <nav id="quick-nav" class="quick-nav" aria-label="Quick menu filters">
       <button class="quick active" data-quick-filter="all" type="button"><span class="quick-icon" aria-hidden="true">⌂</span><span data-quick-label="home">Home</span></button>
