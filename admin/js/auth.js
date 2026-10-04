@@ -36,6 +36,35 @@ function redirectToLogin() {
   window.location.href = 'login.html';
 }
 
+function getSignInErrorMessage(error) {
+  switch (error?.code) {
+    case 'auth/invalid-credential':
+    case 'auth/wrong-password':
+    case 'auth/user-not-found':
+      return 'Email or password is incorrect. Check the credentials in Firebase Authentication.';
+    case 'auth/invalid-email':
+      return 'Enter a valid email address.';
+    case 'auth/user-disabled':
+      return 'This Firebase account is disabled. Enable it in Firebase Authentication.';
+    case 'auth/too-many-requests':
+      return 'Too many sign-in attempts. Wait a while and try again.';
+    case 'auth/operation-not-allowed':
+    case 'auth/admin-restricted-operation':
+      return 'Email/password sign-in is disabled. Enable the Email/Password provider in Firebase Authentication.';
+    case 'auth/network-request-failed':
+      return 'Could not reach Firebase Authentication. Check the network and try again.';
+    case 'auth/unauthorized-domain':
+      return 'This website domain is not authorized in Firebase Authentication settings.';
+    case 'auth/invalid-api-key':
+    case 'auth/api-key-not-valid':
+      return 'Firebase Authentication configuration is invalid. Check the deployed Firebase API key.';
+    default:
+      return error?.code
+        ? `Sign-in failed (${error.code}). Check Firebase Authentication settings and try again.`
+        : 'Sign-in failed. Check Firebase Authentication settings and try again.';
+  }
+}
+
 async function verifyAdminAccess(user,refreshToken=false){
   const token = await user.getIdToken(refreshToken);
   const response = await fetch('/api/admin/access',{
@@ -104,7 +133,7 @@ if (loginBtn) {
       if (authMsg) authMsg.innerText = 'Checking admin access...';
     } catch (err) {
       console.warn(err);
-      if (authMsg) authMsg.innerText = 'Login failed. Check your email and password.';
+      if (authMsg) authMsg.innerText = getSignInErrorMessage(err);
     }
   });
 }
