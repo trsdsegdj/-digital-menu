@@ -1,5 +1,6 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
+  --topbar-default:#0d7b62;
   --green:#087a46;
   --green-deep:#075c38;
   --green-soft:#e5f1e9;
@@ -28,7 +29,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   width:100%;
   min-height:100vh;
   min-height:100dvh;
-  background:linear-gradient(180deg,var(--green) 0 30%,var(--panel) 30% 100%);
+  background:linear-gradient(180deg,var(--topbar-color,var(--topbar-default)) 0 30%,var(--panel) 30% 100%);
   border-radius:0;
   overflow:hidden;
   box-shadow:none;
@@ -36,7 +37,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .topbar{
   position:relative;
   height:196px;
-  background:var(--topbar-color,#0d7b62);
+  background:var(--topbar-color,var(--topbar-default));
   background-image:none;
   color:#fff;
   padding:12px 18px 0;
@@ -48,7 +49,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .topbar{
   position:relative;
   height:196px;
-  background:var(--topbar-color,#0d7b62);
+  background:var(--topbar-color,var(--topbar-default));
   background-image:none;
   color:#fff;
   padding:12px 18px 0;
@@ -58,6 +59,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   display:none;
 }
 .brand-wrap{position:absolute;left:50%;top:34px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;z-index:1}
+.brand-wrap[hidden]{display:none}
 .brand-mark{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;font-size:.72rem;color:#fff;font-weight:800;background:linear-gradient(135deg,rgba(255,255,255,.22),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.22);box-shadow:0 10px 16px rgba(4,24,20,.15)}
 .brand-mark img{width:100%;height:100%;object-fit:cover;border-radius:10px}
 .brand{display:block;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:linear-gradient(100deg,#ff6b6b 0%,#ffd166 22%,#72ef9f 45%,#62c8ff 67%,#c084fc 84%,#ff6b6b 100%);background-size:300% 100%;background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent;font-family:Algerian,'Manrope',serif;font-size:1.08rem;font-weight:400;letter-spacing:.02em;line-height:1.1;text-transform:none;filter:drop-shadow(0 2px 7px rgba(255,255,255,.14));animation:brand-rgb-shift 7s ease-in-out infinite}
@@ -73,7 +75,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .cart-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:8px 11px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.09));border:1px solid rgba(255,255,255,.24);text-decoration:none;color:#fff;font-size:13px;font-weight:800;box-shadow:0 8px 16px rgba(0,0,0,.08)}
 .cart-btn b{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;border-radius:999px;background:rgba(255,255,255,.25);color:#fff;font-size:12px;font-weight:800}
 .cart-icon{font-size:18px;line-height:1}
-.quick-nav{position:absolute;left:14px;right:14px;bottom:10px;display:flex;align-items:center;gap:8px;overflow-x:auto;overflow-y:hidden;padding:4px;border-radius:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(4px);z-index:1;scrollbar-width:none}
+.quick-nav{position:absolute;left:14px;right:14px;bottom:10px;display:flex;align-items:center;gap:8px;overflow-x:auto;overflow-y:hidden;padding:4px;border-radius:18px;background:var(--topbar-color,var(--topbar-default));border:1px solid transparent;z-index:1;scrollbar-width:none}
 .quick-nav::-webkit-scrollbar{display:none}
 .quick{flex:1 0 auto;height:42px;border-radius:15px;background:transparent;color:rgba(255,255,255,.84);font-size:13px;font-weight:800;padding:0 16px;white-space:nowrap;transition:all .2s ease;border:1px solid transparent;opacity:.9}
 .quick:hover{background:rgba(255,255,255,.04)}
@@ -200,7 +202,7 @@ body:has(.app){min-height:100vh;min-height:100dvh;padding:0;background:var(--pag
 .app .topbar .search-panel input{height:42px;padding:0 14px 0 42px;border:1px solid transparent;border-radius:12px;background:#fff;color:#17221d;box-shadow:none;font-family:inherit;font-size:14px}
 .app .topbar .search-panel input::placeholder{color:#66756e;opacity:1}
 .app .topbar .search-panel input:focus{border-color:var(--accent);outline:3px solid rgba(245,158,11,.25);box-shadow:none}
-.app .quick-nav{position:relative;left:0;right:0;width:100%;display:flex;align-self:stretch;justify-content:flex-start;gap:12px;overflow-x:auto;overflow-y:hidden;padding:10px clamp(12px,2.5vw,28px) 12px;border:0;border-radius:0;background:var(--green-deep);backdrop-filter:none;scrollbar-width:none}
+.app .quick-nav{position:relative;left:0;right:0;width:100%;display:flex;align-self:stretch;justify-content:flex-start;gap:12px;overflow-x:auto;overflow-y:hidden;padding:10px clamp(12px,2.5vw,28px) 12px;border:0;border-radius:0;background:var(--topbar-color,var(--topbar-default));backdrop-filter:none;scrollbar-width:none}
 .app .quick-nav::-webkit-scrollbar,.app .categories-list::-webkit-scrollbar{display:none}
 .app .quick{position:relative;display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;min-height:44px;padding:8px 14px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.8);font-size:14px;font-weight:700;opacity:1;transition:transform .15s ease,background-color .15s ease,border-color .15s ease,box-shadow .15s ease}
 .app .quick:hover,.app .quick.active{background:rgba(255,255,255,.12);color:#fff;box-shadow:0 6px 18px rgba(9,28,21,.18);border-color:rgba(255,255,255,.2)}
@@ -260,7 +262,7 @@ body:has(.app){min-height:100vh;min-height:100dvh;padding:0;background:var(--pag
 .app .bottom-cart-badge[hidden]{display:none}
 .theme-dark .app{background:var(--page)}
 .theme-dark .app .topbar{background:var(--topbar-color,#075c38)}
-.theme-dark .app .quick-nav{border-bottom:1px solid #2b3932;background:#42a878}
+.theme-dark .app .quick-nav{border-bottom:1px solid #2b3932;background:var(--topbar-color,#075c38)}
 .theme-dark .app .quick{border-color:rgba(18,51,35,.12);background:rgba(18,51,35,.08);color:#123323!important}
 .theme-dark .app .quick:not(.active){color:#123323!important}
 .theme-dark .app .quick.plain:not(.active){color:#123323!important}

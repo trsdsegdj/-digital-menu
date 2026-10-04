@@ -62,11 +62,13 @@ function getColorForeground(value){
 }
 
 function updateBranding(){
-	const name = localStorage.getItem('restaurantName') || 'Your Business';
+	const name = localStorage.getItem('restaurantName')?.trim() || '';
 	const logo = localStorage.getItem('siteLogoUrl') || '';
 	const titleEl = document.getElementById('restaurantName');
 	const markEl = document.getElementById('brand-mark');
+	const brandWrap = document.querySelector('.brand-wrap');
 	if(titleEl) titleEl.textContent = name;
+	if(brandWrap) brandWrap.hidden = !name && !logo;
 	if(markEl){
 		if(logo){
 			const image = document.createElement('img');
@@ -75,11 +77,11 @@ function updateBranding(){
 			markEl.replaceChildren(image);
 			markEl.classList.add('has-logo');
 		}else{
-			markEl.textContent = name.trim().slice(0,2).toUpperCase() || 'RM';
+			markEl.textContent = name.slice(0,2).toUpperCase();
 			markEl.classList.remove('has-logo');
 		}
 	}
-	document.title = `${name} Catalog`;
+	document.title = name ? `${name} Catalog` : 'Catalog';
 }
 
 const savedTheme = ['theme-teal','theme-dark','theme-pastel'].includes(localStorage.getItem('siteTheme'))
@@ -478,7 +480,7 @@ function applyLang(){
 	const stickyCartAction = document.getElementById('sticky-cart-action');
 
 	if(brandTitle){
-		brandTitle.textContent = localStorage.getItem('restaurantName') || 'Your Business';
+		brandTitle.textContent = localStorage.getItem('restaurantName')?.trim() || '';
 	}
 	if(pageTitle){
 		pageTitle.innerText = translations[lang].title || pageTitle.innerText;

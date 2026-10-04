@@ -8,7 +8,7 @@
     width: 100%;
     min-height: 100vh;
     border-radius: 0;
-    background: linear-gradient(180deg, #0d7b62 0 32%, #efefee 32% 100%);
+    background: linear-gradient(180deg, var(--topbar-color, #0d7b62) 0 32%, #efefee 32% 100%);
     box-shadow: none;
   }
 
