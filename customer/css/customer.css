@@ -269,8 +269,8 @@ body:has(.app){min-height:100vh;min-height:100dvh;padding:0;background:var(--pag
 .theme-dark .app .quick.active{border-color:rgba(18,51,35,.14);border-radius:14px;background:#d7f1e2!important;color:#123323!important;box-shadow:0 8px 18px rgba(8,36,25,.18)}
 .theme-dark .app .quick.active .quick-icon{background:rgba(18,51,35,.08)}
 .theme-dark .app .quick.active::after{left:12px;right:12px;background:#075c38}
-.theme-dark .app .topbar .search-panel input{border-color:#2b3932;background:#17211d;color:#f5f7f6}
-.theme-dark .app .topbar .search-panel input::placeholder{color:#a8b5af}
+.theme-dark .app .topbar .search-panel input{border-color:#dce5dc;background:#fff;color:#17221d}
+.theme-dark .app .topbar .search-panel input::placeholder{color:#66756e}
 .theme-dark .app .topbar .search-panel::before{border-color:#a8b5af}
 .theme-dark .app .topbar .search-panel::after{background:#a8b5af}
 .theme-dark .app .food-discount{color:#ffd58a}
